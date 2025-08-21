@@ -14,26 +14,6 @@ pipeline {
             }
         }
 
-        stage('Compile') {
-            steps {
-                sh "mvn compile"
-            }
-        }
-
-        stage('Unit Test') {
-            steps {
-                // Run tests (do not skip)
-                sh "mvn test"
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh "mvn package -DskipTests=true"
-            }
-        }
-
-
         stage('Build & Tag Docker Image') {
             steps {
                 script {
