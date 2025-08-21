@@ -6,9 +6,6 @@ pipeline {
         jdk 'JDK17'
     }
 
-    environment {
-        SCANNER_HOME = tool 'sonar-scanner'
-    }
 
     stages {
         stage('Git Checkout') {
@@ -36,13 +33,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh "${SCANNER_HOME}/bin/sonar-scanner"
-                }
-            }
-        }
 
         stage('Build & Tag Docker Image') {
             steps {
