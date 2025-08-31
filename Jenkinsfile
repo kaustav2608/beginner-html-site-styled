@@ -41,7 +41,7 @@ pipeline {
                     caCertificate: '', 
                     clusterName: '', 
                     contextName: '', 
-                    credentialsId: 'k8-token', 
+                    credentialsId: 'k8-cred', 
                     namespace: 'webapps', 
                     restrictKubeConfigAccess: false, 
                     serverUrl: 'https://k8s-master-noble:6443' // replace with actual master IP/DNS
