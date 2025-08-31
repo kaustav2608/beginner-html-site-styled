@@ -44,7 +44,7 @@ pipeline {
                     credentialsId: 'k8-cred', 
                     namespace: 'webapps', 
                     restrictKubeConfigAccess: false, 
-                    serverUrl: 'https://k8s-master-noble:6443' // replace with actual master IP/DNS
+                    serverUrl: 'https://10.0.1.110:6443' // replace with actual master IP/DNS
                 ) {
                     sh "kubectl apply -f deployment.yaml"
                     sh "kubectl get svc -n webapps"
